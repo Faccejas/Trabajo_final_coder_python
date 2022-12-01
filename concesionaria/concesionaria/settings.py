@@ -56,7 +56,8 @@ ROOT_URLCONF = 'concesionaria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r"C:\Users\Facu\OneDrive\Escritorio\Scaloneta_autos\concesionaria\compra\templates"]
+         [r"C:\Users\Facu\OneDrive\Escritorio\Scaloneta_autos\concesionaria\venta\templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

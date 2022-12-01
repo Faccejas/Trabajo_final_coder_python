@@ -1,6 +1,6 @@
 from django.urls import path
-from compra.views import *
+from venta.views import *
 
 urlpatterns = [
-    path("")
+    path("Inicio/", Inicio)
 ]

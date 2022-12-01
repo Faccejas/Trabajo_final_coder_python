@@ -20,5 +20,5 @@ from django.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("venta/", include("venta.urls")),
-    path("compra/", include("compra.urls")),
+    path("compra/", include("compra.urls"))
 ]
