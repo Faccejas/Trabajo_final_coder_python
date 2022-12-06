@@ -6,3 +6,9 @@ from compra.models import *
 
 def Inicio (request):
     return render(request, "compra/index.html")
+
+def Automovil(request):
+    return render(request, "compra/Automovil.html")
+
+def Clientes(request):
+    return render(request, "compra/Clientes.html")
