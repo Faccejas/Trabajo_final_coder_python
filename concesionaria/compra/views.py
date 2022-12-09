@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from compra.models import *
-from compra.forms import *
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 # Create your views here.
