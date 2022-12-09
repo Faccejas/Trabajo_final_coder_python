@@ -6,11 +6,11 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 # Create your views here.
 
-def Inicio (request):
-    return render(request, "compra/index.html")
+#def Inicio (request):
+#    return render(request, "compra/index.html")
 
-def Automovil(request):
-    return render(request, "compra/Automovil.html")
+#def Automovil(request):
+#    return render(request, "compra/Automovil.html")
 
 def Clientes(request):
     return render(request, "compra/Clientes.html")

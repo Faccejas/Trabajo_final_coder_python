@@ -2,10 +2,12 @@ from django.urls import path
 from compra.views import *
 
 urlpatterns = [
-    path("Inicio/", Inicio, name= "compra-inicio"),
-    path("Automovil/", Automovil, name= "compra-automovil"),
-    path("Clientes/", Clientes, name= "compra-clientes"),
+    # path("inicio/", Inicio, name= "compra-inicio"),
+    #path("automovil/", Automovil, name= "compra-automovil"),
+    path("clientes/", Clientes, name= "compra-clientes"),
     
+
+
     path("automovil/", AutomovilList.as_view(), name= "compra-automovil"),
     path("automovil/detalle/<pk>/", AutomovilDetail.as_view(), name= "compra-automovil-detail"),
     path("automovil/crear/", AutomovilCreate.as_view(), name= "compra-automovil-create"),

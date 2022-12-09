@@ -12,4 +12,16 @@
             <div class="col-lg-6">
 </section>
 
+<ul>
+    {% for automovil in object_list %}
+        <li>
+            {{automovil.marca}} 
+            <a href="{% url 'compra-automovil-detail' automovil.id %}">Detalle</a> 
+            <a href="{% url 'compra-automovil-update' automovil.id %}">Actualizar</a> 
+            <a href="{% url 'compra-automovil-delete' automovil.id %}">Borrar</a> 
+        </li>
+    {% endfor %}
+</ul>
+
+
 {% endblock %}
