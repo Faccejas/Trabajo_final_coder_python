@@ -26,7 +26,8 @@ class AutomovilCreate(CreateView):
     model = Rodado
     success_url = "/compra/automovil/"
     fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha"]
-
+    template_name = "compra/rodado_form.html"
+    
 class AutomovilUpdate(UpdateView):
     model = Rodado
     success_url = "/compra/automovil/"

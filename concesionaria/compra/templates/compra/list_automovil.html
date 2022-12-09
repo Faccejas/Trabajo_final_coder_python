@@ -15,10 +15,11 @@
 <ul>
     {% for automovil in object_list %}
         <li>
-            {{automovil.marca}} 
-            <a href="{% url 'compra-automovil-detail' automovil.id %}">Detalle</a> 
+            <h1 class="fw-bolder">{{automovil.marca}}</h1>
+            <h2 class="fw-bolder">{{automovil.modelo}}</h2>
+            <p class="lead mb-0"> <a href="{% url 'compra-automovil-detail' automovil.id %}">Detalle</a> 
             <a href="{% url 'compra-automovil-update' automovil.id %}">Actualizar</a> 
-            <a href="{% url 'compra-automovil-delete' automovil.id %}">Borrar</a> 
+            <a href="{% url 'compra-automovil-delete' automovil.id %}">Borrar</a> </p>
         </li>
     {% endfor %}
 </ul>
