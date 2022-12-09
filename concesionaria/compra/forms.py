@@ -1,3 +1,11 @@
-#FALTA ESCRIBIR ACA PARA QUE AL ESCRIBIR DATOS EN EL FORMULARIO DE AUTOMOVILES (COMPRA) SE GUARDEN CORRECTAMENTE EN LA BASE DE DATOS.
+from django import forms
 
-#LUEGO HAY QUE CREAR OTROS TEMPLATES QUE NO LLEGUÉ A HACERLOS, SOLO HICE EL DE DELETE, DETAIL, Y CREAR, FALTA EL RESTO. MIRAR FINAL DE CLASE 1 AVANZADO.
+class AutomovilFormulario (forms.Form):
+    marca = forms.CharField()
+    modelo = forms.CharField()
+    color = forms.CharField()
+    km = forms.IntegerField()
+    año = forms.IntegerField()
+    precio = forms.IntegerField()
+    patente = forms.CharField()
+    vtv_hecha = forms.CharField()
