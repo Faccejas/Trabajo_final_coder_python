@@ -7,3 +7,5 @@ admin.site.register(Vendedor)
 
 admin.site.register(Rodado)
 
+
+admin.site.register(Aseguradora)

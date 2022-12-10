@@ -19,11 +19,7 @@ urlpatterns = [
     path("comprador/actualizar/<pk>/", CompradorUpdate.as_view(), name= "venta-comprador-update"),
     path("comprador/borrar/<pk>/", CompradorDelete.as_view(), name= "venta-comprador-delete"),
 
-    path("aseguradora/", AseguradoraList.as_view(), name= "venta-aseguradora"),
-    path("aseguradora/detalle/<pk>/", AseguradoraDetail.as_view(), name= "venta-aseguradora-detail"),
-    path("aseguradora/crear/", AseguradoraCreate.as_view(), name= "venta-aseguradora-create"),
-    path("aseguradora/actualizar/<pk>/", AseguradoraUpdate.as_view(), name= "venta-aseguradora-update"),
-    path("aseguradora/borrar/<pk>/", AseguradoraDelete.as_view(), name= "venta-aseguradora-delete")
+
 
 
 ]

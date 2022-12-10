@@ -5,8 +5,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 # Create your views here.
 
-#def Inicio (request):
-#    return render(request, "compra/index.html")
+def Inicio (request):
+    return render(request, "compra/inicio.html")
 
 #def Automovil(request):
 #    return render(request, "compra/Automovil.html")
@@ -61,3 +61,30 @@ class VendedorUpdate(UpdateView):
 class VendedorDelete(DeleteView):
     model = Vendedor
     success_url = "/compra/vendedor/"
+
+
+
+
+#aseguradora 
+class AseguradoraList(ListView):
+    model = Aseguradora
+    template_name = "compra/list_aseguradora.html"
+
+class AseguradoraDetail(DetailView):
+    model = Aseguradora
+    template_name = "compra/detail_aseguradora.html"
+
+class AseguradoraCreate(CreateView):
+    model = Aseguradora
+    success_url = "/compra/aseguradora/"
+    fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio", "localidad"]
+    template_name = "compra/aseguradora_form.html"
+    
+class AseguradoraUpdate(UpdateView):
+    model = Aseguradora
+    success_url = "/compra/aseguradora/"
+    fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio", "localidad"]
+
+class AseguradoraDelete(DeleteView):
+    model = Aseguradora
+    success_url = "/compra/aseguradora/"

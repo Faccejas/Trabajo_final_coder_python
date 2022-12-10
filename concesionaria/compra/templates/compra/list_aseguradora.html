@@ -1,4 +1,4 @@
-{% extends 'venta/padre.html' %}
+{% extends 'compra/padre.html' %}
 
 {% block contenido %}
 <section class="bg-light py-5">
@@ -18,9 +18,9 @@
         <li>
             
             <p class="lead mb-0"> {{aseguradora.razon_social}} - {{aseguradora.telefono}} - {{aseguradora.celular}} - {{aseguradora.poliza}} - {{aseguradora.domicilio}} - {{aseguradora.localidad}}</h2>
-            <p class="form-floating mb-3"> <a href="{% url 'venta-aseguradora-detail' aseguradora.id %}">Detalle</a> 
-            <a href="{% url 'venta-aseguradora-update' aseguradora.id %}">Actualizar</a> 
-            <a href="{% url 'venta-aseguradora-delete' aseguradora.id %}">Borrar</a> </p>
+            <p class="form-floating mb-3"> <a href="{% url 'compra-aseguradora-detail' aseguradora.id %}">Detalle</a> 
+            <a href="{% url 'compra-aseguradora-update' aseguradora.id %}">Actualizar</a> 
+            <a href="{% url 'compra-aseguradora-delete' aseguradora.id %}">Borrar</a> </p>
         </li>
     {% endfor %}
 </ul>

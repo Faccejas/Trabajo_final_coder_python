@@ -2,7 +2,7 @@ from django.urls import path
 from compra.views import *
 
 urlpatterns = [
-    # path("inicio/", Inicio, name= "compra-inicio"),
+    path("inicio/", Inicio, name= "compra-inicio"),
     #path("automovil/", Automovil, name= "compra-automovil"),
     #path("clientes/", Clientes, name= "compra-clientes"),
     
@@ -18,5 +18,12 @@ urlpatterns = [
     path("vendedor/detalle/<pk>/", VendedorDetail.as_view(), name= "compra-vendedor-detail"),
     path("vendedor/crear/", VendedorCreate.as_view(), name= "compra-vendedor-create"),
     path("vendedor/actualizar/<pk>/", VendedorUpdate.as_view(), name= "compra-vendedor-update"),
-    path("vendedor/borrar/<pk>/", VendedorDelete.as_view(), name= "compra-vendedor-delete")
+    path("vendedor/borrar/<pk>/", VendedorDelete.as_view(), name= "compra-vendedor-delete"),
+
+    path("aseguradora/", AseguradoraList.as_view(), name= "compra-aseguradora"),
+    path("aseguradora/detalle/<pk>/", AseguradoraDetail.as_view(), name= "compra-aseguradora-detail"),
+    path("aseguradora/crear/", AseguradoraCreate.as_view(), name= "compra-aseguradora-create"),
+    path("aseguradora/actualizar/<pk>/", AseguradoraUpdate.as_view(), name= "compra-aseguradora-update"),
+    path("aseguradora/borrar/<pk>/", AseguradoraDelete.as_view(), name= "compra-aseguradora-delete")
+
 ]

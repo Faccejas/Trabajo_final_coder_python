@@ -67,26 +67,3 @@ class CompradorDelete(DeleteView):
     success_url = "/venta/comprador/"
 
 
-
-class AseguradoraList(ListView):
-    model = Aseguradora
-    template_name = "venta/list_aseguradora.html"
-
-class AseguradoraDetail(DetailView):
-    model = Aseguradora
-    template_name = "venta/detail_aseguradora.html"
-
-class AseguradoraCreate(CreateView):
-    model = Aseguradora
-    success_url = "/venta/aseguradora/"
-    fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio", "localidad"]
-    template_name = "venta/aseguradora_form.html"
-    
-class AseguradoraUpdate(UpdateView):
-    model = Aseguradora
-    success_url = "/compra/aseguradora/"
-    fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio", "localidad"]
-
-class AseguradoraDelete(DeleteView):
-    model = Aseguradora
-    success_url = "/venta/aseguradora/"
