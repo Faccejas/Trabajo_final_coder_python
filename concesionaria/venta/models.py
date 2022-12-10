@@ -11,6 +11,9 @@ class Comprador(models.Model):
     celular = models.IntegerField()
     email= models.EmailField(max_length=50)
 
+    def __str__(self):
+        return f"{self.nombre.capitalize()} | {self.apellido.capitalize()} | {self.dni} | {self.domicilio.capitalize()} | {self.localidad.capitalize()} | {self.celular} | {self.email}"
+
 class Rodado(models.Model):
     marca = models.CharField(max_length=20)
     modelo = models.CharField(max_length=20)
@@ -20,6 +23,9 @@ class Rodado(models.Model):
     precio = models.CharField(max_length=20)
     patente = models.CharField(max_length=20)
 
+    def __str__(self):
+        return f"{self.marca.capitalize()} | {self.modelo.capitalize()} | {self.color.capitalize()} | {self.km} | {self.año} | {self.precio} | {self.patente.upper()}"
+
 class Aseguradora(models.Model):
     razon_social = models.CharField(max_length=50)
     telefono = models.CharField(max_length=20)
@@ -27,3 +33,6 @@ class Aseguradora(models.Model):
     poliza = models.IntegerField()
     domicilio = models.CharField(max_length=50)
     localidad = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f"{self.razon_social} | {self.telefono} | {self.celular} | {self.poliza} | {self.domicilio.capitalize()} | {self.localidad.capitalize()}"
