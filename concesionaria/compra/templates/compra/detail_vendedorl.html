@@ -1,0 +1,19 @@
+{% extends 'compra/padre.html' %}
+
+{% block contenido %}
+
+<section class="py-5 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bolder">Detalle del vendedor</h1>
+                    <p class="lead mb-0">Nombre: {{vendedor.nombre}}</p>
+                    <p class="lead mb-0">Apellido: {{vendedor.apellido}}</p>
+                    <p class="lead mb-0">DNI: {{vendedor.dni}}</p>
+                    <p class="lead mb-0">Domicilio: {{vendedor.domicilio}}</p>
+                    <p class="lead mb-0">Localidad: {{vendedor.localidad}}</p>
+                    <p class="lead mb-0">Celular: {{vendedor.celular}}</p>
+                    <p class="lead mb-0">Email: {{vendedor.email}}</p>
+                </div>
+            </div>
+</section>
+{% endblock %}

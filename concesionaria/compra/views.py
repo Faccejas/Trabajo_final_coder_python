@@ -11,8 +11,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 #def Automovil(request):
 #    return render(request, "compra/Automovil.html")
 
-def Clientes(request):
-    return render(request, "compra/Clientes.html")
+#def Clientes(request):
+    #return render(request, "compra/Clientes.html")
 
 class AutomovilList(ListView):
     model = Rodado
@@ -36,3 +36,28 @@ class AutomovilUpdate(UpdateView):
 class AutomovilDelete(DeleteView):
     model = Rodado
     success_url = "/compra/automovil/"
+
+
+
+class VendedorList(ListView):
+    model = Vendedor
+    template_name = "compra/list_vendedor.html"
+
+class VendedorDetail(DetailView):
+    model = Vendedor
+    template_name = "compra/detail_vendedorl.html"
+
+class VendedorCreate(CreateView):
+    model = Vendedor
+    success_url = "/compra/vendedor/"
+    fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
+    template_name = "compra/vendedor_form.html"
+    
+class VendedorUpdate(UpdateView):
+    model = Vendedor
+    success_url = "/compra/vendedor/"
+    fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
+
+class VendedorDelete(DeleteView):
+    model = Vendedor
+    success_url = "/compra/vendedor/"

@@ -1,0 +1,17 @@
+{% extends 'compra/padre.html' %}
+
+{% block contenido %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <p> Estas seguro que deseas borrar este vendedor '{{object.dni}}' ?
+        <input type="submit" value="Si">
+
+    </p>
+
+    <a href="{% url 'compra-vendedor' %}"> Volver al listado </a>
+</form>
+
+
+{% endblock %}
