@@ -5,7 +5,7 @@ urlpatterns = [
     #path("Inicio/", Inicio, name= "venta-inicio"),
     #path("Automovil/", Automovil, name= "venta-automovil"),
     #path("Clientes/", Clientes, name= "venta-clientes"),
-    path("Seguros/", Seguro, name= "venta-seguros"),
+    #path("Seguros/", Seguro, name= "venta-seguros"),
 
     path("automovil/", AutomovilList.as_view(), name= "venta-automovil"),
     path("automovil/detalle/<pk>/", AutomovilDetail.as_view(), name= "venta-automovil-detail"),
@@ -17,7 +17,13 @@ urlpatterns = [
     path("comprador/detalle/<pk>/", CompradorDetail.as_view(), name= "venta-comprador-detail"),
     path("comprador/crear/", CompradorCreate.as_view(), name= "venta-comprador-create"),
     path("comprador/actualizar/<pk>/", CompradorUpdate.as_view(), name= "venta-comprador-update"),
-    path("comprador/borrar/<pk>/", CompradorDelete.as_view(), name= "venta-comprador-delete")
+    path("comprador/borrar/<pk>/", CompradorDelete.as_view(), name= "venta-comprador-delete"),
+
+    path("aseguradora/", AseguradoraList.as_view(), name= "venta-aseguradora"),
+    path("aseguradora/detalle/<pk>/", AseguradoraDetail.as_view(), name= "venta-aseguradora-detail"),
+    path("aseguradora/crear/", AseguradoraCreate.as_view(), name= "venta-aseguradora-create"),
+    path("aseguradora/actualizar/<pk>/", AseguradoraUpdate.as_view(), name= "venta-aseguradora-update"),
+    path("aseguradora/borrar/<pk>/", AseguradoraDelete.as_view(), name= "venta-aseguradora-delete")
 
 
 ]

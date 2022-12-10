@@ -1,0 +1,18 @@
+{% extends 'venta/padre.html' %}
+
+{% block contenido %}
+
+<section class="py-5 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bolder">Detalle del seguro</h1>
+                    <p class="lead mb-0">Razón Social: {{aseguradora.razon_social}}</p>
+                    <p class="lead mb-0">Teléfono: {{aseguradora.telefono}}</p>
+                    <p class="lead mb-0">Celular: {{aseguradora.celular}}</p>
+                    <p class="lead mb-0">Póliza: {{aseguradora.poliza}}</p>
+                    <p class="lead mb-0">Domicilio: {{aseguradora.domicilio}}</p>
+                    <p class="lead mb-0">Localidad: {{aseguradora.localidad}}</p>
+                </div>
+            </div>
+</section>
+{% endblock %}
