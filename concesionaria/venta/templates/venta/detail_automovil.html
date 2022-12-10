@@ -1,0 +1,19 @@
+{% extends 'venta/padre.html' %}
+
+{% block contenido %}
+
+<section class="py-5 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bolder">Detalle del automóvil</h1>
+                    <p class="lead mb-0">Marca: {{rodado.marca}}</p>
+                    <p class="lead mb-0">Modelo: {{rodado.modelo}}</p>
+                    <p class="lead mb-0">Color: {{rodado.color}}</p>
+                    <p class="lead mb-0">KM: {{rodado.km}}</p>
+                    <p class="lead mb-0">Año: {{rodado.año}}</p>
+                    <p class="lead mb-0">Precio ($): {{rodado.precio}}</p>
+                    <p class="lead mb-0">Patente: {{rodado.patente}}</p>
+                </div>
+            </div>
+</section>
+{% endblock %}

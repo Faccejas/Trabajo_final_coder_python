@@ -1,0 +1,27 @@
+{% extends 'venta/padre.html' %}
+
+{% block contenido %}
+<section class="bg-light py-5">
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+            <h2 class="fw-bolder">Qué automóvil queres vender?</h2>
+            <p class="lead mb-0">Estas a un paso de venderlo</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+</section>
+
+<ul>
+    {% for automovil in object_list %}
+        <li>
+            <h1 class="fw-bolder">{{automovil.marca}}</h1>
+            <h2 class="fw-bolder">{{automovil.modelo}}</h2>
+            <p class="lead mb-0"> <a href="{% url 'compra-automovil-detail' automovil.id %}">Detalle</a> 
+            <a href="{% url 'compra-automovil-update' automovil.id %}">Actualizar</a> 
+            <a href="{% url 'compra-automovil-delete' automovil.id %}">Borrar</a> </p>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
