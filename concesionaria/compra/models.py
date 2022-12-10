@@ -6,7 +6,7 @@ from django.db import models
 class Vendedor(models.Model):
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=20)
-    dni = models.IntegerField()
+    dni = models.CharField(max_length=20)
     domicilio = models.CharField(max_length=50)
     localidad = models.CharField(max_length=20)
     celular = models.IntegerField()
