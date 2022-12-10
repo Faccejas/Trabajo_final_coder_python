@@ -13,13 +13,14 @@
 </section>
 
 <ul>
+    <h2 class="fw-bolder"> Detalle de autos a la venta</h2>
     {% for automovil in object_list %}
         <li>
-            <h1 class="fw-bolder">{{automovil.marca}}</h1>
-            <h2 class="fw-bolder">{{automovil.modelo}}</h2>
-            <p class="lead mb-0"> <a href="{% url 'compra-automovil-detail' automovil.id %}">Detalle</a> 
-            <a href="{% url 'compra-automovil-update' automovil.id %}">Actualizar</a> 
-            <a href="{% url 'compra-automovil-delete' automovil.id %}">Borrar</a> </p>
+            
+            <p class="lead mb-0"> {{automovil.marca}} - {{automovil.modelo}} - {{automovil.color}} - {{automovil.km}} - {{automovil.año}} - {{automovil.precio}} - {{automovil.patente}}</h2>
+            <p class="form-floating mb-3"> <a href="{% url 'venta-automovil-detail' automovil.id %}">Detalle</a> 
+            <a href="{% url 'venta-automovil-update' automovil.id %}">Actualizar</a> 
+            <a href="{% url 'venta-automovil-delete' automovil.id %}">Borrar</a> </p>
         </li>
     {% endfor %}
 </ul>
