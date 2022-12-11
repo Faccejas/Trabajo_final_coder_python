@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from venta.models import *
+from compra.models import Auto_Buscado, Rodado
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 # Create your views here.
 
-#def Inicio (request):
-    #return render(request, "venta/index.html")
+def Inicio (request):
+    return render(request, "venta/inicio.html")
 
 #def Automovil(request):
     #return render(request, "venta/Automovil.html")
@@ -18,9 +19,9 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
     #return render(request, "venta/Seguro.html")
 
 
-class AutomovilList(ListView):
-    model = Rodado
-    template_name = "venta/list_automovil.html"
+# NO va aca porque no me interesa desde ventas ver que autos tengo class AutomovilList(ListView):
+#     model = Rodado
+#     template_name = "venta/list_automovil.html"
 
 class AutomovilDetail(DetailView):
     model = Rodado
@@ -28,42 +29,49 @@ class AutomovilDetail(DetailView):
 
 class AutomovilCreate(CreateView):
     model = Rodado
-    success_url = "/venta/automovil/"
+    success_url = "/venta/"
     fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente"]
     template_name = "venta/rodado_form.html"
     
 class AutomovilUpdate(UpdateView):
     model = Rodado
-    success_url = "/compra/automovil/"
+    success_url = "/venta/"
     fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente"]
 
 class AutomovilDelete(DeleteView):
     model = Rodado
-    success_url = "/venta/automovil/"
+    success_url = "/venta/"
 
 
 
-class CompradorList(ListView):
-    model = Comprador
-    template_name = "venta/list_comprador.html"
+class EmpleadosList(ListView):
+    model = Empleados
+    template_name = "venta/list_empleados.html"
 
-class CompradorDetail(DetailView):
-    model = Comprador
-    template_name = "venta/detail_comprador.html"
+class EmpleadosDetail(DetailView):
+    model = Empleados
+    template_name = "venta/detail_empleado.html"
 
-class CompradorCreate(CreateView):
-    model = Comprador
-    success_url = "/venta/comprador/"
+class EmpleadosCreate(CreateView):
+    model = Empleados
+    success_url = "/venta/empleados/"
     fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
-    template_name = "venta/comprador_form.html"
+    template_name = "venta/empleados_form.html"
     
-class CompradorUpdate(UpdateView):
-    model = Comprador
-    success_url = "/compra/comprador/"
+class EmpleadosUpdate(UpdateView):
+    model = Empleados
+    success_url = "/venta/empleados/"
     fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
 
-class CompradorDelete(DeleteView):
-    model = Comprador
-    success_url = "/venta/comprador/"
+class EmpleadosDelete(DeleteView):
+    model = Empleados
+    success_url = "/venta/empleados/"
 
 
+
+
+
+
+class Auto_BuscadoList(ListView):
+    model = Auto_Buscado
+    template_name = "venta/list_Auto_Buscado.html"

@@ -35,7 +35,7 @@ class AutomovilUpdate(UpdateView):
     fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha"]
 
 class AutomovilDelete(DeleteView):
-    model = Rodado
+    model = Rodado  
     success_url = "/compra/automovil/"
 
 

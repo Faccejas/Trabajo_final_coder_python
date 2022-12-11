@@ -1,11 +1,12 @@
 from django.contrib import admin
 from venta.models import *
+from compra.models import *
 
 # Register your models here.
 
-admin.site.register(Comprador)
+admin.site.register(Empleados)
 
-admin.site.register(Rodado)
+
 
 
 
