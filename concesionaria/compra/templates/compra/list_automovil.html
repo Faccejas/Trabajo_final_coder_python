@@ -6,18 +6,20 @@
         <div class="text-center mb-5">
             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
             <h2 class="fw-bolder">Qué automóvil estas buscando?</h2>
-            <p class="lead mb-0">Usa el buscador o mira en el listado!</p>
+            <p class="lead mb-0">A continuacion estan todas los autos disponibles hoy (si no tenemos lo que busca el cliente, cargalo en "busqueda del comprador"</p>
         </div>
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-6">
 </section>
+
+
 
 <ul>
     <h2 class="fw-bolder"> Listado de autos</h2>
     {% for automovil in object_list %}
         <li>
             
-            <p class="lead mb-0"> {{automovil.marca}} - {{automovil.modelo}} - {{automovil.color}} - {{automovil.km}} - {{automovil.año}} - {{automovil.precio}} - {{automovil.patente}} - {{automovil.vtv_hecha}}</h2>
+            <p class="lead mb-0"> {{automovil.marca}} - {{automovil.modelo}} - {{automovil.color}} - Km: {{automovil.km}} - {{automovil.año}} - ${{automovil.precio}} - {{automovil.patente}} - VTV: {{automovil.vtv_hecha}}</h2>
             <p class="form-floating mb-3"> <a href="{% url 'compra-automovil-detail' automovil.id %}">Detalle</a> 
             <a href="{% url 'compra-automovil-update' automovil.id %}">Actualizar</a> 
             <a href="{% url 'compra-automovil-delete' automovil.id %}">Borrar</a> </p>

@@ -5,12 +5,12 @@
 <form method="POST">
     {% csrf_token %}
 
-    <p> Estas seguro que deseas borrar este vendedor '{{object.dni}}' ?
+    <p> Estas seguro que deseas borrar este comprador? '{{object.dni}}' ?
         <input type="submit" value="Si">
 
     </p>
 
-    <a href="{% url 'compra-vendedor' %}"> Volver al listado </a>
+    <a href="{% url 'compra-Auto_Buscado' %}"> Volver al listado </a>
 </form>
 
 

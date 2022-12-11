@@ -18,6 +18,7 @@ class AutomovilList(ListView):
     model = Rodado
     template_name = "compra/list_automovil.html"
 
+
 class AutomovilDetail(DetailView):
     model = Rodado
     template_name = "compra/detail_automovil.html"
@@ -39,27 +40,27 @@ class AutomovilDelete(DeleteView):
 
 
 
-class VendedorList(ListView):
-    model = Vendedor
-    template_name = "compra/list_vendedor.html"
+class Auto_BuscadoList(ListView):
+    model = Auto_Buscado
+    template_name = "compra/list_Auto_Buscado.html"
 
-class VendedorDetail(DetailView):
-    model = Vendedor
-    template_name = "compra/detail_vendedorl.html"
+class Auto_BuscadoDetail(DetailView):
+    model = Auto_Buscado
+    template_name = "compra/detail_Auto_Buscado.html"
 
-class VendedorCreate(CreateView):
-    model = Vendedor
-    success_url = "/compra/vendedor/"
-    fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
-    template_name = "compra/vendedor_form.html"
+class Auto_BuscadoCreate(CreateView):
+    model = Auto_Buscado
+    success_url = "/compra/Auto_Buscado/"
+    fields = [ "marca" , "modelo" , "color" , "nombre_comprador", "apellido" , "dni", "celular", "email"]
+    template_name = "compra/Auto_Buscado_form.html"
     
-class VendedorUpdate(UpdateView):
-    model = Vendedor
-    success_url = "/compra/vendedor/"
+class Auto_BuscadoUpdate(UpdateView):
+    model = Auto_Buscado
+    success_url = "/compra/Auto_Buscado/"
     fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
 
-class VendedorDelete(DeleteView):
-    model = Vendedor
+class Auto_BuscadoDelete(DeleteView):
+    model = Auto_Buscado
     success_url = "/compra/vendedor/"
 
 

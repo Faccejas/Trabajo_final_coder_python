@@ -1,0 +1,28 @@
+{% extends 'compra/padre.html' %}
+
+{% block contenido %}
+<section class="bg-light py-5">
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+            <h2 class="fw-bolder">Listado de clientes en busqueda de vehiculos</h2>
+            <p class="lead mb-0"> </p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+</section>
+
+<ul>
+    <h2 class="fw-bolder"> Información confidencial de los clientes</h2>
+    {% for Auto_Buscado in object_list %}
+        <li>
+            
+            <p class="lead mb-0"> {{Auto_Buscado.marca}} - {{Auto_Buscado.modelo}} - {{Auto_Buscado.color}} - {{Auto_Buscado.nombre_comprador}} - {{Auto_Buscado.apellido}} - {{Auto_Buscado.dni}} - {{Auto_Buscado.celular}} - {{Auto_Buscado.email}}  </h2>
+            <p class="form-floating mb-3"> <a href="{% url 'compra-Auto_Buscado-detail' Auto_Buscado.id %}">Detalle</a> 
+            <a href="{% url 'compra-Auto_Buscado-update' Auto_Buscado.id %}">Actualizar</a> 
+            <a href="{% url 'compra-Auto_Buscado-delete' Auto_Buscado.id %}">Borrar</a> </p>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

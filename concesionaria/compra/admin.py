@@ -3,7 +3,7 @@ from compra.models import *
 
 # Register your models here.
 
-admin.site.register(Vendedor)
+admin.site.register(Auto_Buscado)
 
 admin.site.register(Rodado)
 

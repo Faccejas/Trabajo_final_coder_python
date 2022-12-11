@@ -14,11 +14,11 @@ urlpatterns = [
     path("automovil/actualizar/<pk>/", AutomovilUpdate.as_view(), name= "compra-automovil-update"),
     path("automovil/borrar/<pk>/", AutomovilDelete.as_view(), name= "compra-automovil-delete"),
 
-    path("vendedor/", VendedorList.as_view(), name= "compra-vendedor"),
-    path("vendedor/detalle/<pk>/", VendedorDetail.as_view(), name= "compra-vendedor-detail"),
-    path("vendedor/crear/", VendedorCreate.as_view(), name= "compra-vendedor-create"),
-    path("vendedor/actualizar/<pk>/", VendedorUpdate.as_view(), name= "compra-vendedor-update"),
-    path("vendedor/borrar/<pk>/", VendedorDelete.as_view(), name= "compra-vendedor-delete"),
+    path("Auto_Buscado/", Auto_BuscadoList.as_view(), name= "compra-Auto_Buscado"),
+    path("Auto_Buscado/detalle/<pk>/", Auto_BuscadoDetail.as_view(), name= "compra-Auto_Buscado-detail"),
+    path("Auto_Buscado/crear/", Auto_BuscadoCreate.as_view(), name= "compra-Auto_Buscado-create"),
+    path("Auto_Buscado/actualizar/<pk>/", Auto_BuscadoUpdate.as_view(), name= "compra-Auto_Buscado-update"),
+    path("Auto_Buscado/borrar/<pk>/", Auto_BuscadoDelete.as_view(), name= "compra-Auto_Buscado-delete"),
 
     path("aseguradora/", AseguradoraList.as_view(), name= "compra-aseguradora"),
     path("aseguradora/detalle/<pk>/", AseguradoraDetail.as_view(), name= "compra-aseguradora-detail"),
