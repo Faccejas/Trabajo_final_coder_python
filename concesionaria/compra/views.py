@@ -31,18 +31,18 @@ class AutomovilDetail(DetailView):
     model = Rodado
     template_name = "compra/detail_automovil.html"
 
-class AutomovilCreate(CreateView):
+class AutomovilCreate(LoginRequiredMixin, CreateView):
     model = Rodado
     success_url = "/compra/automovil/"
     fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha"]
     template_name = "compra/rodado_form.html"
     
-class AutomovilUpdate(UpdateView):
+class AutomovilUpdate(LoginRequiredMixin, UpdateView):
     model = Rodado
     success_url = "/compra/automovil/"
     fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha"]
 
-class AutomovilDelete(DeleteView):
+class AutomovilDelete(LoginRequiredMixin, DeleteView):
     model = Rodado  
     success_url = "/compra/automovil/"
 
@@ -56,18 +56,18 @@ class Auto_BuscadoDetail(DetailView):
     model = Auto_Buscado
     template_name = "compra/detail_Auto_Buscado.html"
 
-class Auto_BuscadoCreate(CreateView):
+class Auto_BuscadoCreate(LoginRequiredMixin, CreateView):
     model = Auto_Buscado
     success_url = "/compra/Auto_Buscado/"
     fields = [ "marca" , "modelo" , "color" , "nombre_comprador", "apellido" , "dni", "celular", "email"]
     template_name = "compra/Auto_Buscado_form.html"
     
-class Auto_BuscadoUpdate(UpdateView):
+class Auto_BuscadoUpdate(LoginRequiredMixin, UpdateView):
     model = Auto_Buscado
     success_url = "/compra/Auto_Buscado/"
     fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
 
-class Auto_BuscadoDelete(DeleteView):
+class Auto_BuscadoDelete(LoginRequiredMixin, DeleteView):
     model = Auto_Buscado
     success_url = "/compra/vendedor/"
 
@@ -83,18 +83,18 @@ class AseguradoraDetail(DetailView):
     model = Aseguradora
     template_name = "compra/detail_aseguradora.html"
 
-class AseguradoraCreate(CreateView):
+class AseguradoraCreate(LoginRequiredMixin, CreateView):
     model = Aseguradora
     success_url = "/compra/aseguradora/"
     fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio", "localidad"]
     template_name = "compra/aseguradora_form.html"
     
-class AseguradoraUpdate(UpdateView):
+class AseguradoraUpdate(LoginRequiredMixin, UpdateView):
     model = Aseguradora
     success_url = "/compra/aseguradora/"
     fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio", "localidad"]
 
-class AseguradoraDelete(DeleteView):
+class AseguradoraDelete(LoginRequiredMixin, DeleteView):
     model = Aseguradora
     success_url = "/compra/aseguradora/"
 
