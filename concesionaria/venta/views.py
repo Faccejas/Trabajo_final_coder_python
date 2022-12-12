@@ -23,7 +23,7 @@ def Inicio (request):
 #     model = Rodado
 #     template_name = "venta/list_automovil.html"
 
-class AutomovilDetail(DetailView):
+# No va aca porque esta en compras class AutomovilDetail(DetailView):
     model = Rodado
     template_name = "venta/detail_automovil.html"
 

@@ -1,11 +1,12 @@
 from django.urls import path
 from compra.views import *
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path("", Inicio, name= "compra-inicio"),
     #path("automovil/", Automovil, name= "compra-automovil"),
     #path("clientes/", Clientes, name= "compra-clientes"),
-    
+    path("nosotros/", Nosotros, name= "compra-nosotros"),
 
 
     path("automovil/", AutomovilList.as_view(), name= "compra-automovil"),
@@ -24,6 +25,12 @@ urlpatterns = [
     path("aseguradora/detalle/<pk>/", AseguradoraDetail.as_view(), name= "compra-aseguradora-detail"),
     path("aseguradora/crear/", AseguradoraCreate.as_view(), name= "compra-aseguradora-create"),
     path("aseguradora/actualizar/<pk>/", AseguradoraUpdate.as_view(), name= "compra-aseguradora-update"),
-    path("aseguradora/borrar/<pk>/", AseguradoraDelete.as_view(), name= "compra-aseguradora-delete")
+    path("aseguradora/borrar/<pk>/", AseguradoraDelete.as_view(), name= "compra-aseguradora-delete"),
+
+    path("login/", iniciar_sesion, name="auth-login"),
+    path("register/", registrar_usuario, name="auth-register"),
+    path("logout/", LogoutView.as_view(), name="auth-logout"),
+    path("perfil/editar/", editar_perfil, name="auth-editar-perfil"),
+    
 
 ]

@@ -27,9 +27,15 @@
 
                         <li class="nav-item"><a class="nav-link" href="{% url 'compra-aseguradora' %}">Seguros</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'compra-Auto_Buscado-create' %}">Cargar busqueda del comprador</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'compra-automovil' %}">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Sign up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'compra-nosotros' %}">Nosotros</a></li>
                     </ul>
+                    {% if request.user.is_authenticated %}
+                    <a class="btn btn-primary" href="{% url 'auth-logout' %}">Logout</a>
+                    
+                    <img src="{{imagen_url}}" style="max-width: 55px;">
+                {% else %}
+                    <a class="btn btn-primary" href="{% url 'auth-login' %}">Login</a>
+                {% endif %}
                 </div>
             </div>
         </nav>
