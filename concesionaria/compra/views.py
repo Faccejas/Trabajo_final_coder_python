@@ -136,7 +136,7 @@ def registrar_usuario(request):
         if formulario.is_valid():
             
             formulario.save()
-            return redirect("compra-inicio")
+            return redirect("auth-avatar")
         else:
             return render(request, "compra/register.html", { "form": formulario, "errors": formulario.errors})
 
