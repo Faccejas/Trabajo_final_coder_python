@@ -13,8 +13,11 @@ from django.contrib.auth.decorators import login_required
 
 def Inicio (request):
     if request.user.is_authenticated:
-        imagen_model = Avatar.objects.filter(user= request.user.id).order_by("-id")[0]
-        imagen_url = imagen_model.imagen.url
+        if len(Avatar.objects.filter(user= request.user.id))==1:
+            imagen_model = Avatar.objects.filter(user= request.user.id).order_by("-id")[0]
+            imagen_url = imagen_model.imagen.url
+        else:
+            imagen_url = ""
     else:
         imagen_url = ""
     return render(request, "compra/inicio.html", {"imagen_url": imagen_url})
