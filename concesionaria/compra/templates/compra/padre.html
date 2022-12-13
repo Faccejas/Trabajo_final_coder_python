@@ -32,7 +32,7 @@
                     {% if request.user.is_authenticated %}
                     <a class="btn btn-primary" href="{% url 'auth-logout' %}">Logout</a>
                     
-                    <img src="{{imagen_url}}" style="max-width: 55px;">
+                    <img src="{{imagen_url}}" style="max-width: 75px;">
                 {% else %}
                     <a class="btn btn-primary" href="{% url 'auth-login' %}">Login</a>
                 {% endif %}

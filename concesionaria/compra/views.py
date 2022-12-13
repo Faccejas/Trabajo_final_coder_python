@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+
 from compra.models import *
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
@@ -12,8 +12,12 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def Inicio (request):
-    return render(request, "compra/inicio.html")
-
+    if request.user.is_authenticated:
+        imagen_model = Avatar.objects.filter(user= request.user.id).order_by("-id")[0]
+        imagen_url = imagen_model.imagen.url
+    else:
+        imagen_url = ""
+    return render(request, "compra/inicio.html", {"imagen_url": imagen_url})
 def Nosotros (request):
     return render(request, "compra/Nosotros.html")
 #def Automovil(request):
@@ -166,3 +170,27 @@ def editar_perfil(request):
         formulario = UserEditForm(initial = {"email": usuario.email, "first_name": usuario.first_name, "last_name": usuario.last_name})
 
     return render(request, "compra/editar_perfil.html", {"form": formulario})
+
+
+
+
+@login_required
+def agregar_avatar(request):
+    
+    if request.method == "POST":
+        formulario = AvatarForm(request.POST, files=request.FILES)
+        
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+
+            usuario = request.user
+
+            avatar = Avatar(user=usuario, imagen=data["imagen"])
+            avatar.save()
+
+            return redirect("compra-inicio")
+        else:
+            return render(request, "compra/agregar_avatar.html", {"form": formulario, "errors": formulario.errors })
+    formulario = AvatarForm()
+
+    return render(request, "compra/agregar_avatar.html", {"form": formulario})

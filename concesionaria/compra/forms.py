@@ -25,9 +25,10 @@ class UserEditForm(UserCreationForm):
    
     class Meta:
         model = User
-        fields = ["email", "last_name", "first_name"]
+        fields = ["email", "last_name", "first_name", "password1", "password2"]
 
-        # ? La siguiente linea elimina cualquier mensaje de ayuda en los campos
-        # ?help_texts = { k: "" for k in fields }
+
         help_texts = { "email": "Indica un correo electronico que uses habitualmente", "first_name": "", "last_name": "", "password1": ""}
 
+class AvatarForm(forms.Form):
+    imagen = forms.ImageField()

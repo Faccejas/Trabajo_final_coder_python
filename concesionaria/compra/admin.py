@@ -9,3 +9,5 @@ admin.site.register(Rodado)
 
 
 admin.site.register(Aseguradora)
+
+admin.site.register(Avatar)
