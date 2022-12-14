@@ -20,6 +20,9 @@ urlpatterns = [
     path("empleados/borrar/<pk>/", EmpleadosDelete.as_view(), name= "venta-empleados-delete"),
 
     path("Auto_Buscado/", Auto_BuscadoList.as_view(), name= "venta-Auto_Buscado"),
-
+    path("Auto_Buscado/detalle/<pk>/", Auto_BuscadoDetail.as_view(), name= "venta-Auto_Buscado-detail"),
+    path("Auto_Buscado/crear/", Auto_BuscadoCreate.as_view(), name= "venta-Auto_Buscado-create"),
+    path("Auto_Buscado/actualizar/<pk>/", Auto_BuscadoUpdate.as_view(), name= "venta-Auto_Buscado-update"),
+    path("Auto_Buscado/borrar/<pk>/", Auto_BuscadoDelete.as_view(), name= "venta-Auto_Buscado-delete"),
 
 ]

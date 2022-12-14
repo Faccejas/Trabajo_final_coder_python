@@ -58,7 +58,9 @@ class AutomovilDelete(LoginRequiredMixin, DeleteView):
 class Auto_BuscadoList(ListView):
     model = Auto_Buscado
     template_name = "compra/list_Auto_Buscado.html"
-
+class Auto_BuscadoList(ListView):
+    model = Auto_Buscado
+    template_name = "venta/list_Auto_Buscado.html"
 class Auto_BuscadoDetail(DetailView):
     model = Auto_Buscado
     template_name = "compra/detail_Auto_Buscado.html"
@@ -77,6 +79,7 @@ class Auto_BuscadoUpdate(LoginRequiredMixin, UpdateView):
 class Auto_BuscadoDelete(LoginRequiredMixin, DeleteView):
     model = Auto_Buscado
     success_url = "/compra/vendedor/"
+
 
 
 

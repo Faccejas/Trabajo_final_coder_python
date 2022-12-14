@@ -18,9 +18,9 @@
         <li>
             
             <p class="lead mb-0"> {{Auto_Buscado.marca}} - {{Auto_Buscado.modelo}} - {{Auto_Buscado.color}} - {{Auto_Buscado.nombre_comprador}} - {{Auto_Buscado.apellido}} - {{Auto_Buscado.dni}} - {{Auto_Buscado.celular}} - {{Auto_Buscado.email}}  </h2>
-            <p class="form-floating mb-3"> <a href="{% url 'compra-Auto_Buscado-detail' Auto_Buscado.id %}">Detalle</a> 
-            <a href="{% url 'compra-Auto_Buscado-update' Auto_Buscado.id %}">Actualizar</a> 
-            <a href="{% url 'compra-Auto_Buscado-delete' Auto_Buscado.id %}">Borrar</a> </p>
+            <p class="form-floating mb-3"> <a href="{% url 'venta-Auto_Buscado-detail' Auto_Buscado.id %}">Detalle</a> 
+            <a href="{% url 'venta-Auto_Buscado-update' Auto_Buscado.id %}">Actualizar</a> 
+            <a href="{% url 'venta-Auto_Buscado-delete' Auto_Buscado.id %}">Borrar</a> </p>
         </li>
     {% endfor %}
 </ul>
