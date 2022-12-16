@@ -1,0 +1,18 @@
+{% extends 'venta/padre.html' %}
+
+{% block contenido %}
+
+<section class="py-5 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bolder">Detalle del auto buscado</h1>
+                    <p class="lead mb-0">Marca: {{auto_buscado.marca}}</p>
+                    <p class="lead mb-0">Modelo: {{auto_buscado.modelo}}</p>
+                    <p class="lead mb-0">Color: {{auto_buscado.color}}</p>
+                    <p class="lead mb-0">Nombre: {{auto_buscado.nombre_comprador}}</p>
+                    <p class="lead mb-0">Apellido: {{auto_buscado.apellido}}</p>
+                    <p class="lead mb-0">Tel. Contacto: {{auto_buscado.celular}}</p>
+                </div>
+            </div>
+</section>
+{% endblock %}

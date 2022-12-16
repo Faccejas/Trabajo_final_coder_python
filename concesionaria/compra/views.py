@@ -60,7 +60,7 @@ class Auto_BuscadoList(ListView):
     template_name = "compra/list_Auto_Buscado.html"
 class Auto_BuscadoList(ListView):
     model = Auto_Buscado
-    template_name = "venta/list_Auto_Buscado.html"
+    template_name = "compra/list_Auto_Buscado.html"
 class Auto_BuscadoDetail(DetailView):
     model = Auto_Buscado
     template_name = "compra/detail_Auto_Buscado.html"
@@ -96,13 +96,13 @@ class AseguradoraDetail(DetailView):
 class AseguradoraCreate(LoginRequiredMixin, CreateView):
     model = Aseguradora
     success_url = "/compra/aseguradora/"
-    fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio", "localidad"]
+    fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio"]
     template_name = "compra/aseguradora_form.html"
     
 class AseguradoraUpdate(LoginRequiredMixin, UpdateView):
     model = Aseguradora
     success_url = "/compra/aseguradora/"
-    fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio", "localidad"]
+    fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio"]
 
 class AseguradoraDelete(LoginRequiredMixin, DeleteView):
     model = Aseguradora
@@ -155,14 +155,14 @@ def editar_perfil(request):
     usuario = request.user
 
     if request.method == "POST":
-        # * cargar informacion en el formulario
+    
         formulario = UserEditForm(request.POST)
 
-        # ! validacion del formulario
+   
         if formulario.is_valid():
             data = formulario.cleaned_data
 
-            # * actualizacion del usuario con los datos del formulario
+       
             usuario.email = data["email"]
             usuario.first_name = data["first_name"]
             usuario.last_name = data["last_name"]
@@ -172,7 +172,7 @@ def editar_perfil(request):
         else:
             return render(request, "compra/editar_perfil.html", {"form": formulario, "erros": formulario.errors})
     else:
-        # * crear formulario vacio
+   
         formulario = UserEditForm(initial = {"email": usuario.email, "first_name": usuario.first_name, "last_name": usuario.last_name})
 
     return render(request, "compra/editar_perfil.html", {"form": formulario})

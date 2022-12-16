@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from venta.models import *
-from compra.models import Auto_Buscado, Rodado
+from compra.models import Auto_Buscado, Rodado 
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 
@@ -30,24 +30,24 @@ def Inicio (request):
 #     template_name = "venta/list_automovil.html"
 
 # No va aca porque esta en compras class AutomovilDetail(DetailView):
-    model = Rodado
-    template_name = "venta/detail_automovil.html"
+    #model = Rodado
+    #template_name = "venta/detail_automovil.html"
 
 
 class AutomovilCreate(LoginRequiredMixin,CreateView):
     model = Rodado
-    success_url = "/venta/"
-    fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente"]
+    success_url = "/compra/automovil/"
+    fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha"]
     template_name = "venta/rodado_form.html"
     
-class AutomovilUpdate(LoginRequiredMixin,UpdateView):
+""" class AutomovilUpdate(LoginRequiredMixin,UpdateView):
     model = Rodado
     success_url = "/venta/"
     fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente"]
 
 class AutomovilDelete(LoginRequiredMixin,DeleteView):
     model = Rodado
-    success_url = "/venta/"
+    success_url = "/venta/" """
 
 
 
@@ -79,24 +79,25 @@ class EmpleadosDelete(LoginRequiredMixin,DeleteView):
 
 
 
-class Auto_BuscadoList(ListView):
+class Auto_BuscadoList(LoginRequiredMixin, ListView):
     model = Auto_Buscado
     template_name = "venta/list_Auto_Buscado.html"
 
-class Auto_BuscadoDetail(DetailView):
+class Auto_BuscadoDetail(LoginRequiredMixin, DetailView):
     model = Auto_Buscado
     template_name = "venta/detail_Auto_Buscado.html"
 
-class Auto_BuscadoCreate(LoginRequiredMixin, CreateView):
+""" class Auto_BuscadoCreate(LoginRequiredMixin, CreateView):
     model = Auto_Buscado
     success_url = "/venta/Auto_Buscado/"
     fields = [ "marca" , "modelo" , "color" , "nombre_comprador", "apellido" , "dni", "celular", "email"]
     template_name = "venta/Auto_Buscado_form.html"
-    
+"""
 class Auto_BuscadoUpdate(LoginRequiredMixin, UpdateView):
     model = Auto_Buscado
     success_url = "/venta/Auto_Buscado/"
-    fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
+    fields = ["nombre_comprador", "apellido" , "dni", "celular", "email", "marca", "modelo", "color"]
+    
 
 class Auto_BuscadoDelete(LoginRequiredMixin, DeleteView):
     model = Auto_Buscado

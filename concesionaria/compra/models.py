@@ -36,7 +36,6 @@ class Aseguradora(models.Model):
     celular = models.IntegerField()
     poliza = models.IntegerField()
     domicilio = models.CharField(max_length=50)
-    localidad = models.CharField(max_length=20)
 
     def __str__(self):
         return f"{self.razon_social} | {self.telefono} | {self.celular} | {self.poliza} | {self.domicilio.capitalize()} | {self.localidad.capitalize()}"
