@@ -26,6 +26,8 @@ class Rodado(models.Model):
     precio = models.CharField(max_length=20)
     patente = models.CharField(max_length=20)
     vtv_hecha = models.CharField(max_length=20)
+    nombre_apellido_vendedor = models.CharField(max_length=20, null=True, blank=True)
+    telefono = models.IntegerField()
     
     def __str__(self):
         return f"{self.marca.capitalize()} | {self.modelo.capitalize()} | {self.color.capitalize()} | {self.km} | {self.año} | {self.precio} | {self.patente.upper()} | {self.vtv_hecha.capitalize()}"
@@ -40,7 +42,16 @@ class Aseguradora(models.Model):
     def __str__(self):
         return f"{self.razon_social} | {self.telefono} | {self.celular} | {self.poliza} | {self.domicilio.capitalize()} | {self.localidad.capitalize()}"
 
-        
+class Mensajes(models.Model):
+    escritor =  models.CharField(max_length=50)
+    texto = models.CharField(max_length=350)
+    
+
+    def __str__(self):
+        return f"{self.texto | self.texto} "
+
+
+
 class Avatar(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to="avatares", null=True, blank=True)

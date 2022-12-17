@@ -11,7 +11,7 @@ urlpatterns = [
 
     path("automovil/", AutomovilList.as_view(), name= "compra-automovil"),
     path("automovil/detalle/<pk>/", AutomovilDetail.as_view(), name= "compra-automovil-detail"),
-    path("automovil/crear/", AutomovilCreate.as_view(), name= "compra-automovil-create"),
+    #path("automovil/crear/", AutomovilCreate.as_view(), name= "compra-automovil-create"),
     path("automovil/actualizar/<pk>/", AutomovilUpdate.as_view(), name= "compra-automovil-update"),
     path("automovil/borrar/<pk>/", AutomovilDelete.as_view(), name= "compra-automovil-delete"),
 
@@ -26,6 +26,18 @@ urlpatterns = [
     path("aseguradora/crear/", AseguradoraCreate.as_view(), name= "compra-aseguradora-create"),
     path("aseguradora/actualizar/<pk>/", AseguradoraUpdate.as_view(), name= "compra-aseguradora-update"),
     path("aseguradora/borrar/<pk>/", AseguradoraDelete.as_view(), name= "compra-aseguradora-delete"),
+
+
+
+
+
+    path("mensajeria/", MensajesList.as_view(), name= "compra-mensajes"),
+    path("mensajeria/crear/", MensajesCreate.as_view(), name= "compra-mensajes-create"),
+    path("mensajeria/actualizar/<pk>/", MensajesUpdate.as_view(), name= "compra-mensajes-update"),
+    path("mensajeria/borrar/<pk>/", MensajesDelete.as_view(), name= "compra-mensajes-delete"),
+
+
+
 
     path("login/", iniciar_sesion, name="auth-login"),
     path("register/", registrar_usuario, name="auth-register"),

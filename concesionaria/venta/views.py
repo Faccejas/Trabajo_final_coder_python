@@ -37,7 +37,7 @@ def Inicio (request):
 class AutomovilCreate(LoginRequiredMixin,CreateView):
     model = Rodado
     success_url = "/compra/automovil/"
-    fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha"]
+    fields = ['nombre_apellido_vendedor', 'telefono', "marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha"]
     template_name = "venta/rodado_form.html"
     
 """ class AutomovilUpdate(LoginRequiredMixin,UpdateView):
