@@ -1,7 +1,32 @@
-#Proyecto Coder Concesionaria La Scaloneta
+""" #Proyecto Coder Concesionaria La Scaloneta
 
-Este proyecto se trata de una consecionaria llamada La Scaloneta autos.
-Dentro de las operaciones de la misma, se encargan de la compra y venta de autos.
-La misma requiere de un sistema que le permita gestionar sus datos.
+Este proyecto se trata de una consecionaria llamada "La Scaloneta autos". 
+Es una pagina web para la administracion interna de una consecionaria a la cual solo tendran acceso los empreados tras crearse un usuario (muy pocas paginas son accesibles sin iniciar sesion)
+Contiene 2 apps: compra y venta:
 
-#Nombres de los alumnos que realizaron el proyecto:
+
+----Compra es la app principal, donde se encuentra:
+1) Log in, registro y edicion de usuarios asi como la foto del avatar.
+2) El sistema de mensajeria del proyecto. Uno puede cargar los mensajes que desea en un formulario al cual solo tiene acceso el personal que este logueado.
+3) Temas involucrados con la compra: 
+    -listado de stock de autos en venta, extraido de la bd (cargados en venta). 
+    -Las agencias de seguros que recomendadas por la concesionaria.
+    -Un formulario para cargar los autos que los clientes estan buscando adquirir y no estan disponibles (Este listado lo encontraremos luego en ventas y el objetivo de esta funcion es que si no esta disponible el auto que esta buscando un comprador, esta busqueda quede registrada en la base de datos y cuando un vendedor aparezca con el modelo en busqueda, se genere una puesta en contacto de ambos clientes)
+4) Nosotros: Breve descripcion de los 2 participantes del grupo, con imagenes.
+5) Los models
+
+
+---- Venta es una app secundaria desde la cual:
+1) Se cargan a la BD los autos que estan a la venta (este listado estara en compras)
+2) Se tiene acceso al listado de los autos que estan siendo buscado por compradores (como ya se menciono la idea es que el vendedor y comprador sean facilmente conectados)
+3) Desde la barra de navegacion se tiene acceso al nosotros de compra
+
+
+
+
+Nombres de los alumnos que realizaron el proyecto:
+1) Barrientos Sebastian
+2) Cejas Facundo
+3) Habia un integrante mas pero debido a que no contesto mas los mensajes y comentarnos que no vio las clases decidimos continuar de a 2
+
+ """

@@ -127,7 +127,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # URL para el LOGIN
-LOGIN_URL  = "/compra/login/"
+LOGIN_URL  = "/login/"
 
 
 MEDIA_URL = '/media/'
