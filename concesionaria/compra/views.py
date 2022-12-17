@@ -37,12 +37,12 @@ class AutomovilDetail(LoginRequiredMixin, DetailView):
 
 class AutomovilUpdate(LoginRequiredMixin, UpdateView):
     model = Rodado
-    success_url = "/compra/automovil/"
+    success_url = "/automovil/"
     fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha", "nombre_apellido_vendedor", "telefono"]
 
 class AutomovilDelete(LoginRequiredMixin, DeleteView):
     model = Rodado  
-    success_url = "/compra/automovil/"
+    success_url = "/automovil/"
 
 
 class Auto_BuscadoCreate(LoginRequiredMixin, CreateView):
@@ -79,18 +79,18 @@ class AseguradoraDetail(DetailView):
 
 class AseguradoraCreate(LoginRequiredMixin, CreateView):
     model = Aseguradora
-    success_url = "/compra/aseguradora/"
+    success_url = "/aseguradora/"
     fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio"]
     template_name = "compra/aseguradora_form.html"
     
 class AseguradoraUpdate(LoginRequiredMixin, UpdateView):
     model = Aseguradora
-    success_url = "/compra/aseguradora/"
+    success_url = "/aseguradora/"
     fields = ["razon_social", "telefono" , "celular", "poliza", "domicilio"]
 
 class AseguradoraDelete(LoginRequiredMixin, DeleteView):
     model = Aseguradora
-    success_url = "/compra/aseguradora/"
+    success_url = "/aseguradora/"
 
 
 
@@ -102,18 +102,18 @@ class MensajesList(LoginRequiredMixin, ListView):
 
 class MensajesCreate(LoginRequiredMixin, CreateView):
     model = Mensajes
-    success_url = "/compra/mensajeria/"
+    success_url = "/mensajeria/"
     fields = [ "escritor", 'texto']
     template_name = "compra/mensajes_form.html"
     
 class MensajesUpdate(LoginRequiredMixin, UpdateView):
     model = Mensajes
-    success_url = "/compra/mensajeria/"
+    success_url = "/mensajeria/"
     fields = [ "escritor", 'texto']
 
 class MensajesDelete(LoginRequiredMixin, DeleteView):
     model = Mensajes
-    success_url = "/compra/mensajeria/"
+    success_url = "/mensajeria/"
 
 
 

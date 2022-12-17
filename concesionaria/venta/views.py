@@ -15,64 +15,13 @@ from django.contrib.auth.decorators import login_required
 def Inicio (request):
     return render(request, "venta/inicio.html")
 
-#def Automovil(request):
-    #return render(request, "venta/Automovil.html")
-
-#def Clientes(request):
-    #return render(request, "venta/Clientes.html")
-
-#def Seguro(request):
-    #return render(request, "venta/Seguro.html")
-
-
-# NO va aca porque no me interesa desde ventas ver que autos tengo class AutomovilList(ListView):
-#     model = Rodado
-#     template_name = "venta/list_automovil.html"
-
-# No va aca porque esta en compras class AutomovilDetail(DetailView):
-    #model = Rodado
-    #template_name = "venta/detail_automovil.html"
-
 
 class AutomovilCreate(LoginRequiredMixin,CreateView):
     model = Rodado
-    success_url = "/compra/automovil/"
+    success_url = "/automovil/"
     fields = ['nombre_apellido_vendedor', 'telefono', "marca", "modelo" , "color", "km", "año", "precio", "patente", "vtv_hecha"]
     template_name = "venta/rodado_form.html"
-    
-""" class AutomovilUpdate(LoginRequiredMixin,UpdateView):
-    model = Rodado
-    success_url = "/venta/"
-    fields = ["marca", "modelo" , "color", "km", "año", "precio", "patente"]
 
-class AutomovilDelete(LoginRequiredMixin,DeleteView):
-    model = Rodado
-    success_url = "/venta/" """
-
-
-
-class EmpleadosList(ListView):
-    model = Empleados
-    template_name = "venta/list_empleados.html"
-
-class EmpleadosDetail(DetailView):
-    model = Empleados
-    template_name = "venta/detail_empleado.html"
-
-class EmpleadosCreate(LoginRequiredMixin,CreateView):
-    model = Empleados
-    success_url = "/venta/empleados/"
-    fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
-    template_name = "venta/empleados_form.html"
-    
-class EmpleadosUpdate(LoginRequiredMixin,UpdateView):
-    model = Empleados
-    success_url = "/venta/empleados/"
-    fields = ["nombre", "apellido" , "dni", "domicilio", "localidad", "celular", "email"]
-
-class EmpleadosDelete(LoginRequiredMixin,DeleteView):
-    model = Empleados
-    success_url = "/venta/empleados/"
 
 
 
@@ -87,12 +36,6 @@ class Auto_BuscadoDetail(LoginRequiredMixin, DetailView):
     model = Auto_Buscado
     template_name = "venta/detail_Auto_Buscado.html"
 
-""" class Auto_BuscadoCreate(LoginRequiredMixin, CreateView):
-    model = Auto_Buscado
-    success_url = "/venta/Auto_Buscado/"
-    fields = [ "marca" , "modelo" , "color" , "nombre_comprador", "apellido" , "dni", "celular", "email"]
-    template_name = "venta/Auto_Buscado_form.html"
-"""
 class Auto_BuscadoUpdate(LoginRequiredMixin, UpdateView):
     model = Auto_Buscado
     success_url = "/venta/Auto_Buscado/"

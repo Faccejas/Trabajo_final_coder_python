@@ -1,7 +1,7 @@
 {% extends 'compra/padre.html' %}
 
 {% block contenido %}
-
+{%load static%}
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-5">
@@ -11,6 +11,7 @@
                             <h1 class="display-5 fw-bolder text-white mb-2"> Consecionaria </h1>
                             <h1 class="display-5 fw-bolder text-white mb-2"> "La Scaloneta" </h1>
                             <p class="lead text-white-50 mb-4"> En el último año hemos contactado mas de 500 clientes y vamos por mas!</p>
+                            <img class="img-fluid rounded-square mb-3" src="{%static 'compra/assets/img/bandera.jpg'%}" style="max-width: 400px"/>
                         </div>
                     </div>
                 </div>
